@@ -1,7 +1,7 @@
 import os
 from geometry_msgs.msg import Pose
 
-from kinematics import Kinematics
+#from kinematics import Kinematics
 from grasp_utils import *
 
 
@@ -21,7 +21,8 @@ class GraspitScene:
         self._graspit = graspit
         self._robot = robot
         self._body = body
-        self._kinematics = Kinematics('{}/models/robots/{}'.format(os.environ['GRASPIT'], robot))
+        #self._kinematics = Kinematics('{}/models/robots/{}'.format(os.environ['GRASPIT'], robot))
+        self._kinematics = None
 
     def planGrasps(self, max_steps=70000):
         """Plan grasps
@@ -70,6 +71,7 @@ class GraspitScene:
                 response = graspit.getRobot()
                 robot = response.robot
                 return grasp_from_robot_state(robot, quality, body, kinematics)
+                
         except Exception:
             pass
 
