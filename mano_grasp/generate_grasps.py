@@ -34,7 +34,7 @@ parser.add_argument('-g', '--max_grasps', type=int, default=0, help="Max best gr
 parser.add_argument('--relax_fingers',
                     action='store_true',
                     help="Randomize squezzed fingers positions")
-parser.add_argument('--change_speed', action='store_true', help="Try several joint's speed ratios")
+parser.add_argument('--change_speed', action='store_true', help="Try several joint's speed ratios, generally try different robot.")
 
 
 def main(args):
