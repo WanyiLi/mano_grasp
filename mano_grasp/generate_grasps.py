@@ -92,7 +92,7 @@ def main(args):
     if args.debug:
         with GraspitProcess(graspit_dir=args.graspit_dir, plugin_dir=args.plugin_dir) as p:
             for body_name, body_grasps in grasps:
-                scene = GraspitScene(p.graspit, 'ManoHand', body_name)
+                scene = GraspitScene(p.graspit, 'dlr_hand', body_name)
                 for grasp in body_grasps:
                     scene.grasp(grasp['pose'], grasp['dofs'])
                     time.sleep(5.0)
