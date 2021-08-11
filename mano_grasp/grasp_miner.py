@@ -28,10 +28,10 @@ class GraspMiner:
         self._max_steps = max_steps
         self._max_grasps = max_grasps
         self._relax_fingers = relax_fingers
-        self._robot_names = ['dlr_hand']
+        self._robot_names = ['dlr_hand'] # dlr_hand uses origin_eigen'
         # we can't change a joints speed ratios on the fly, so use several hand models
         if change_speed:
-            self._robot_names += ['dlr_hand_id_eigen', 'dlr_hand_origin_eigen']
+            self._robot_names += ['dlr_hand_id_eigen']
 
     def __call__(self, object_name):
         """Generated grasps for specific object
